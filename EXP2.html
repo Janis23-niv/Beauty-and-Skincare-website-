@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Nivila Glow & Grace | Beauty & Skincare Vlogs</title>
+
+<style>
+body{
+    background:#FFF5F8;
+    font-family:Arial;
+    text-align:center;
+}
+
+.box{
+    width:420px;
+    margin:auto;
+    background:white;
+    padding:20px;
+    border:3px solid pink;
+    border-radius:15px;
+}
+
+table{
+    margin:auto;
+    border-collapse:collapse;
+    width:80%;
+}
+
+th{
+    background:#FF69B4;
+    color:white;
+}
+
+th,td{
+    border:1px solid gray;
+    padding:10px;
+}
+
+input,select,textarea{
+    width:90%;
+    padding:8px;
+    margin:5px;
+}
+
+input[type=submit],input[type=reset]{
+    width:120px;
+    background:#FF69B4;
+    color:white;
+    border:none;
+    padding:10px;
+    border-radius:8px;
+}
+
+h1{
+    color:#E75480;
+}
+
+h3{
+    color:#C71585;
+}
+</style>
+
+</head>
+
+<body>
+
+<nav style="background:#FFB6C1;padding:12px;">
+    <a href="EXP1.html"
+       style="text-decoration:none;
+              color:#C71585;
+              font-weight:bold;">
+       🏠 Back to Home
+    </a>
+</nav>
+
+<h1>🌸 Nivila Glow & Grace 🌸</h1>
+
+<h2>Beauty & Skincare Vlogs</h2>
+
+<p>
+✨ Discover glowing skin, honest reviews, makeup tutorials,<br>
+DIY skincare, and self-care routines every week! ✨
+</p>
+
+<div class="box">
+
+<h3>💖 Join Our Beauty Community 💖</h3>
+
+<form id="subscribeForm">
+
+<input type="text" id="name"
+placeholder="👩 Full Name" required><br>
+
+<input type="email" id="email"
+placeholder="📧 Email Address" required><br>
+
+<input type="number" id="age"
+placeholder="🎂 Age" min="15" max="60"><br>
+
+<select id="skin">
+<option>Select Skin Type</option>
+<option>Normal</option>
+<option>Dry</option>
+<option>Oily</option>
+<option>Combination</option>
+<option>Sensitive</option>
+</select><br>
+
+<label><b>Favorite Content</b></label><br>
+
+<input type="checkbox" name="content" value="Skincare">Skincare
+<input type="checkbox" name="content" value="Makeup">Makeup
+<input type="checkbox" name="content" value="Haircare">Haircare
+<br><br>
+
+<textarea id="goal"
+placeholder="✨ Tell us your beauty goal..."></textarea>
+
+<br>
+
+<input type="submit" value="Subscribe">
+<input type="reset" value="Clear">
+
+</form>
+
+</div>
+
+<br>
+
+<h2>🌷 Our Beauty Family 🌷</h2>
+
+<table>
+
+<tr>
+<th>Name</th>
+<th>Email</th>
+<th>Age</th>
+<th>Skin Type</th>
+<th>Interest</th>
+</tr>
+
+<tbody id="details"></tbody>
+
+</table>
+
+<script>
+
+document.getElementById("subscribeForm").onsubmit=function(e){
+
+e.preventDefault();
+
+let name=document.getElementById("name").value;
+let email=document.getElementById("email").value;
+let age=document.getElementById("age").value;
+let skin=document.getElementById("skin").value;
+
+let interest="";
+let box=document.getElementsByName("content");
+
+for(let i=0;i<box.length;i++)
+{
+if(box[i].checked)
+interest+=box[i].value+" ";
+}
+
+let row="<tr><td>"+name+"</td><td>"+email+"</td><td>"+age+"</td><td>"+skin+"</td><td>"+interest+"</td></tr>";
+
+document.getElementById("details").innerHTML+=row;
+
+alert("🌸 Welcome to Glow & Grace! Your subscription is successful.");
+
+document.getElementById("subscribeForm").reset();
+
+}
+
+</script>
+
+</body>
+</html>
